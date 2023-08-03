@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/PaymentContext.Tests/PaymentContext.Tests.csproj",
+                "${workspaceFolder}/PaymentContext/PaymentContext.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/PaymentContext.Tests/PaymentContext.Tests.csproj",
+                "${workspaceFolder}/PaymentContext/PaymentContext.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/PaymentContext.Tests/PaymentContext.Tests.csproj"
+                "${workspaceFolder}/PaymentContext/PaymentContext.sln"
             ],
             "problemMatcher": "$msCompile"
         }

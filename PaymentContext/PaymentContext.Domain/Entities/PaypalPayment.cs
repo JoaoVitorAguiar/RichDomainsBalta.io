@@ -1,16 +1,19 @@
+using PaymentContext.Domain.ValueObjects;
+using PaymentContext.Shared.ValueObjects;
+
 namespace PaymentContext.Domain.Entities;
 public class PaypalPayment : Payment
 {
     public PaypalPayment(
         string transactionCode,
-        string email,
+        Email email,
         DateTime paidDate,
         DateTime expireDate,
         decimal total,
         decimal totalPaid,
         string payer,
-        string document,
-        string address
+        Document document,
+        Address address
         ) : base(
             paidDate,
             expireDate,
@@ -25,5 +28,5 @@ public class PaypalPayment : Payment
     }
 
     public string TransactionCode { get; private set; }
-    public string Email { get; private set; }
+    public Email Email { get; private set; }
 }

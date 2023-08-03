@@ -1,5 +1,7 @@
+using PaymentContext.Shared.Entities;
+
 namespace PaymentContext.Domain.Entities;
-public class Subscription
+public class Subscription : Entity
 {
     public DateTime CreateDate { get; private set; }
     public DateTime LastUpdateDate { get; private set; }

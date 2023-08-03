@@ -1,3 +1,6 @@
+using PaymentContext.Domain.ValueObjects;
+using PaymentContext.Shared.ValueObjects;
+
 namespace PaymentContext.Domain.Entities;
 public class CreditPayment : Payment
 {
@@ -10,8 +13,8 @@ public class CreditPayment : Payment
         decimal total,
         decimal totalPaid,
         string payer,
-        string document,
-        string address
+        Document document,
+        Address address
         ) : base(
             paidDate,
             expireDate,

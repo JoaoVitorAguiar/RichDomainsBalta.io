@@ -1,12 +1,15 @@
+using PaymentContext.Domain.ValueObjects;
+using PaymentContext.Shared.Entities;
+using PaymentContext.Shared.ValueObjects;
+
 namespace PaymentContext.Domain.Entities;
 
-public class Student
+public class Student : Entity
 {
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public string Document { get; private set; }
-    public string Email { get; private set; }
-    public string Address { get; private set; }
+    public Name Name { get; set; }
+    public Document Document { get; private set; }
+    public Email Email { get; private set; }
+    public Address Address { get; private set; }
 
     private IList<Subscription> _subscriptions;
     public IReadOnlyCollection<Subscription> Subscriptions
@@ -18,10 +21,9 @@ public class Student
     }
 
 
-    public Student(string firstName, string lastName, string document, string email)
+    public Student(Name name, Document document, Email email)
     {
-        FirstName = firstName;
-        LastName = lastName;
+        Name = name;
         Document = document;
         Email = email;
         // Address = address; Neste contexto não se precisa do endreço no aluno!
