@@ -20,7 +20,6 @@ public class Student : Entity
         }
     }
 
-
     public Student(Name name, Document document, Email email)
     {
         Name = name;
@@ -28,6 +27,8 @@ public class Student : Entity
         Email = email;
         // Address = address; Neste contexto não se precisa do endreço no aluno!
         _subscriptions = new List<Subscription>();
+
+        AddNotifications(name, document, email);
     }
 
     public void AddSubscription(Subscription subscription)
