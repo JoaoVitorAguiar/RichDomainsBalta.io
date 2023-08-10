@@ -33,9 +33,17 @@ public class Student : Entity
 
     public void AddSubscription(Subscription subscription)
     {
+        var hasSubscriptionActive = false;
         foreach (var sub in Subscriptions)
         {
-            sub.Inactivate();
+            if (sub.Active)
+                hasSubscriptionActive = true;
+        }
+
+        if (hasSubscriptionActive)
+        {
+            AddNotification("Student.Subscriptions", "Você já possui uma assinatura ativa");
+            return;
         }
         _subscriptions.Add(subscription);
     }

@@ -1,3 +1,4 @@
+using Flunt.Validations;
 using PaymentContext.Shared.Entities;
 
 namespace PaymentContext.Domain.Entities;
@@ -28,6 +29,13 @@ public class Subscription : Entity
 
     public void AddPayment(Payment payment)
     {
+        // Neste caso, ele deixa ocorrer o oagemneto mesmo tendo notificações
+        // Ele trata isso antes de ser confirmado no banco
+
+        AddNotifications( new Contract()
+            .Requires()
+            .IsGreaterThan(DateTime.Now, payment.PaidDate, "Subscription.Payments", "A data de pagamento deve ser futura"));
+
         _payments.Add(payment);
     }
 
