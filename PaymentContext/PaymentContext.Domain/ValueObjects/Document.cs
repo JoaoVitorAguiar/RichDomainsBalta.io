@@ -24,7 +24,7 @@ public class Document : ValueObject
         {
             return true;
         }
-        if(Type == EDocumentType.CNPJ && Number.Length == 11)
+        if(Type == EDocumentType.CPF && Number.Length == 11)
         {
             return true;
         }

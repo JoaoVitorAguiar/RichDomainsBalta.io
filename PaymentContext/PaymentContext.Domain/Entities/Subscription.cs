@@ -9,13 +9,8 @@ public class Subscription : Entity
     public DateTime? ExpireDate { get; private set; }
     public bool Active { get; private set; }
     private IList<Payment> _payments;
-    public IReadOnlyCollection<Payment> Payments
-    {
-        get
-        {
-            return _payments.ToArray();
-        }
-    }
+    public IReadOnlyCollection<Payment> Payments => _payments.ToArray();
+    
 
     // Toda vez que criar uma Subscription irá assumir que ela está ativa
     public Subscription(DateTime? expireDate)
