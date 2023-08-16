@@ -53,6 +53,4 @@ public class StudentTests
         _student.AddSubscription(subscription);
         Assert.IsTrue(_student.Valid);
     }
-
-
 }
